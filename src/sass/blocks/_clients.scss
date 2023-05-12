@@ -1,0 +1,37 @@
+.clients {
+    min-height: 945px;
+    &__wrapper {
+        width: 915px;
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+    }
+    img {
+        position: absolute;
+        margin-right: 61px;
+        top: 0;
+    }
+    &__client {
+        margin-left: 230px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+        color: #0D0D0D;
+        &:first-line {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 18px;
+            color: #0D0D0D;
+        }
+    }
+    span {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 22px;
+        color: #646464;
+    }
+
+}
