@@ -28,9 +28,15 @@
         width: 269px;
         text-align: center;
         img {
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 35px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 35px;
+        }
+        &_animated {
+            animation: heartbeat 3s ease infinite;
+            &:hover {
+            animation-play-state: paused;
+            }
         }
         span {
             font-weight: 700;

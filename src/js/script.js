@@ -83,4 +83,44 @@ $(document).ready(function(){
 
   $("input[name=phone]").mask("+3 (999) 999-9999");
 
+  $("form").submit(function(e) {
+    e.preventDefault();
+
+    if(!$(this).valid()) {
+      return;
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").value('');
+
+      $('form').trigger("reset");
+    });
+    return false;
+  });
+
+  //Smooth
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 1600) {
+      $(".pageup").fadeIn();
+    } else {
+      $(".pageup").fadeOut();
+    }
+  });
+
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
 });
